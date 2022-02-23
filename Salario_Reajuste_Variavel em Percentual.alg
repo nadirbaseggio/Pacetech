@@ -14,6 +14,6 @@ leia(Perc_reajuste)
 Salario_reajustado <- Salario_atual *( Perc_Reajuste/100 +1)
 Escreval("Seu novo salario com reajuste de % ", Perc_Reajuste:2:2)
 Escreval("sera de R$ : " ,Salario_Reajustado:2:2)
-Escreval("Um ganho real de R$: ", Salario_reajustado - Salario_atual:2:2)
+Escreval("Um aumento de R$: ", Salario_reajustado - Salario_atual:2:2)
 
 fimalgoritmo
