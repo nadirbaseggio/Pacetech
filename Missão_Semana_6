@@ -1,0 +1,68 @@
+package Semana6;
+
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void main(String[] args) {
+        
+        Scanner leitor = new Scanner(System.in);
+        
+        int menuInicial, menuFinal;
+        float cotDolar, converter, convertido;
+        
+        System.out.println("Informe a cotação do Dólar hoje: ");
+        cotDolar = leitor.nextFloat();
+        
+        do{
+            System.out.println("Escolha uma das opções: ");
+            System.out.println("(1) Converter de Dólares para Reais.");
+            System.out.println("(2) Converter de Reais para Dólares.");
+            System.out.println("(3) Converter de Fahrenheit para Celsius.");
+            System.out.println("(4) Converter de Celsius para Fahrenheit.");
+            menuInicial = leitor.nextInt();
+            
+            switch(menuInicial){
+                case 1 -> {
+                    System.out.println("Informe o valor em Dólares: ");
+                    converter = leitor.nextFloat();
+                    convertido = converter * cotDolar;
+                    System.out.println("O valor em Reais : BRL " + String.format("%.2f", convertido));
+                }
+                case 2 -> {
+                    System.out.println("Informe o valor em Reais: ");
+                    converter = leitor.nextFloat();
+                    convertido = converter/cotDolar;
+                    System.out.println("O valor em Dólares : USD " + String.format("%.2f", convertido));
+                }
+                case 3 -> {
+                    System.out.println("Informe a temperatura em Fahrenheit: ");
+                    converter = leitor.nextFloat();
+                    convertido = (converter - 32) / 1.8f;
+                    System.out.println("A temperatura em Celsius : " + String.format("%.2f", convertido) + "°C");
+                }
+                case 4 -> {
+                    System.out.println("Informe a temperatura em Celsius : ");
+                    converter = leitor.nextFloat();
+                    convertido = (converter*1.8f) + 32;
+                    System.out.println("A temperatura em Fahrenheit : " + String.format("%.2f", convertido) + "°F");
+                }
+                default -> System.out.println("Opção inválida!");
+            }
+            
+            System.out.println("Escolha uma das opções seguintes: ");
+            System.out.println("(1) Fazer outra conversão.");
+            System.out.println("(2) Finalizar programa.");
+            menuFinal = leitor.nextInt();
+            
+            if(menuFinal != 1 && menuFinal != 2){
+                System.out.println("Opção inválida!");
+            } else if(menuFinal == 2){
+                System.out.println("O programa será finalizado.");
+            }                    
+            
+        }while(menuFinal != 2);
+        
+    }
+    
+}
